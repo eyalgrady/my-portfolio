@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Element Craft | Eyal Grady</title>
+</head>
+
+<body>
+
+    <!-- ====================header===================== -->
+
+    <header>
+        <span id="logoLeft">Element</span><span id="logoRight">Craft</span>
+    </header>
+
+    <!-- ================main-container================ -->
+
+    <main class="main-container">
+
+    <!-- ==============project-container=============== -->
+
+        <div class="operations-container">
+
+            <div class="controlBtns">
+            
+                <button id="addBtn" class="btn">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <button id="saveBtn" class="btn">Save</button>
+                <button id="deleteBtn" class="btn">Delete</button>
+                
+            </div>
+
+            <div class="text-format center">
+                <button id="bold" class="option-button format">
+                    <i class="fa-solid fa-bold"></i>
+                </button>
+                <button id="italic" class="option-button format">
+                    <i class="fa-solid fa-italic"></i>
+                </button>
+                <button id="underline" class="option-button format">
+                    <i class="fa-solid fa-underline"></i>
+                </button>
+                <button id="strikethrough" class="option-button format">
+                    <i class="fa-solid fa-strikethrough"></i>
+                </button>
+                <button id="superscript" class="option-button script">
+                    <i class="fa-solid fa-superscript"></i>
+                </button>
+                <button id="subscript" class="option-button script">
+                    <i class="fa-solid fa-subscript"></i>
+                </button>
+                <button id="insertOrderedList" class="option-button">
+                    <div class="fa-solid fa-list-ol"></div>
+                </button>
+                <button id="insertUnorderedList" class="option-button">
+                    <div class="fa-solid fa-list"></div>
+                </button>
+                <button id="undo" class="option-button">
+                    <i class="fa-solid fa-rotate-left"></i>
+                </button>
+                <button id="fa-rotate-left" class="option-button">
+                    <i class="fa-solid fa-rotate-right"></i>
+                </button>
+                <button id="justifyLeft" class="option-button align">
+                    <i class="fa-solid fa-align-left"></i>
+                </button>
+                <button id="justifyCenter" class="option-button align">
+                    <i class="fa-solid fa-align-center"></i>
+                </button>
+                <button id="justifyRight" class="option-button align">
+                    <i class="fa-solid fa-align-right"></i>
+                </button>
+                <button id="justifyFull" class="option-button align">
+                    <i class="fa-solid fa-align-justify"></i>
+                </button>
+                <select id="fontSize" class="adv-option-button">
+                </select>
+                <select id="formatBlock" class="adv-option-button">
+                    <option value="span">Normal</option>
+                    <option value="H1">H1</option>
+                    <option value="H2">H2</option>
+                    <option value="H3">H3</option>
+                    <option value="H4">H4</option>
+                    <option value="H5">H5</option>
+                </select>
+                <select id="fontName" class="adv-option-button">
+                </select>
+
+                <div class="color-wrapper">
+                    <label for="fontColor">Font Color</label>
+                    <input type="color" id="fontColor" class="adv-option-button">
+                </div>
+
+            </div>
+            
+        </div>
+
+        <div class="projectLayout-container">
+        
+            <div id="createProjectLayout"></div>
+            <div id="savedProjectLayout"></div>
+        
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

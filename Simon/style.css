@@ -1,0 +1,207 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: 'Original Surfer';
+}
+
+:root {
+    --bg-color: #101010;
+    --text-color: #e1e1e1;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* < !-- game-container --> */
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+}
+
+#outer-circle {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    height: 31.25em;
+    width: 31.25em;
+    border-radius: 50%;
+    border: solid 20px var(--bg-color);
+    box-shadow: 0 0 10px var(--text-color);
+}
+
+#inner-circle {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 13.75em;
+    width: 13.75em;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background-color: var(--bg-color);
+    box-shadow: 0 0 10px var(--text-color);
+    letter-spacing: .1rem;
+}
+
+.startBtn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.gameBtns-wrapper{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.gameBtn {
+    border-radius: 15%;
+    font-size: 1em;
+    padding: 5%;
+    margin: 1.5%;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: .1rem solid var(--text-color);
+    cursor: pointer;
+    transition: .5s ease;
+    letter-spacing: .1rem;
+}
+
+.start-btn {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.gameBtn:hover {
+    background: transparent;
+    color: var(--text-color);
+    box-shadow: 0 0 1rem var(--text-color);
+}
+
+#count {
+    font-size: 2.5em;
+    color: var(--text-color);
+}
+
+.panel {
+    cursor: pointer;
+}
+
+.top-left-panel {
+    border-top-left-radius: 100%;
+    background-color: darkgreen;
+}
+
+.top-left-panel:hover {
+    background-color: lightgreen;
+}
+
+.top-right-panel {
+    border-top-right-radius: 100%;
+    background-color: darkred;
+}
+
+.top-right-panel:hover {
+    background-color: tomato;
+}
+
+.bottom-left-panel {
+    border-bottom-left-radius: 100%;
+    background-color: goldenrod;
+}
+
+.bottom-left-panel:hover {
+    background-color: yellow;
+}
+
+.bottom-right-panel {
+    border-bottom-right-radius: 100%;
+    background-color: darkblue;
+}
+
+.bottom-right-panel:hover {
+    background-color: lightskyblue;
+}
+
+
+/* < !-- cards-container --> */
+
+.card-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #101010;
+    box-shadow: 0 0 10px #e1e1e1;
+    color: #e1e1e1;
+    width: 30vw;
+    padding: 30px;
+    border-radius: 6px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    position: relative;
+    animation: 1s drop;
+}
+
+@keyframes drop {
+    0% {
+        top: -100px;
+    }
+
+    100% {
+        top: 50%;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* < !-- @media --> */
+
+@media (max-width:600px) {
+    #outer-circle {
+        height: 23.25em;
+        width: 23.25em;
+    }
+
+    #inner-circle {
+        height: 10.75em;
+        width: 10.75em;
+    }
+
+    .game-over {
+        width: 70%;
+    }
+}

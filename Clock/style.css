@@ -1,0 +1,360 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto momo', monospace;
+}
+
+:root {
+    --bg-color: #2f363e;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    /* --main-color: rgb(182, 182, 182); */
+    --main-color: #FFD369;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-color);
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 2rem;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.nav-bar a {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: .3s;
+    text-transform: uppercase;
+}
+
+.nav-bar a:hover,
+.nav-bar a.active {
+    color: var(--main-color);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: flex;
+    flex-direction: column;
+}
+
+#time {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 2em;
+    width: 100%;
+    color: var(--text-color);
+}
+
+#time .circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 150px;
+    min-width: 100px;
+    height: 150px;
+    min-height: 100px;        
+}
+
+#time .circle svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+
+#time .circle svg circle {
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke: #191919;
+    stroke-width: 4;
+    transform: translate(5px, 5px);
+}
+
+#time .circle svg circle:nth-child(2) {
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+}
+
+#time div {
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+#time div p {
+    font-size: 0.35em;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+}
+
+#time .ap {
+    position: relative;
+    font-size: 1em;
+    transform: translateX(-20px);
+}
+
+.dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+
+.dots::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    width: 15px;
+    height: 15px;
+    background: var(--clr);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+}
+
+.container-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.controls {
+    display: flex;
+    justify-content: end;
+    gap: .8rem;
+    width: 100%;
+}
+
+.btns {
+    border: none;
+    outline: none;
+    padding: .5em;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btns:hover {
+    background: transparent;
+    background: var(--main-color);
+    color: var(--text-color);
+}
+.btns:focus {
+    box-shadow: 0 0 10px #FFD369;
+}
+
+#stoperPauseBtn,
+#timerPauseBtn {
+    display: none;
+}
+
+#stoperResetBtn,
+#timerResetBtn {
+    display: none;
+}
+
+#stoperContinueBtn,
+#timerContinueBtn {
+    display: none;
+}
+
+#timerStartBtn {
+    display: none;
+}
+
+    /* < !--================================================--> */
+
+.clock-input {
+    position: relative;
+    display: inline-block;
+    max-width: 380px;
+}
+
+.clock-input::after {
+    content: "\f078"; /* Unicode for Font Awesome down arrow */
+    font-family: "Font Awesome 5 Free"; /* Font Awesome font family */
+    font-weight: 900; /* Required for Font Awesome solid icons */
+    color: #fff; /* Icon color */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+#clockSelect {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Add extra padding on the right */
+    font-size: 16px; /* border: 1px solid #ccc; */
+    border-radius: 4px;
+    border: none;
+    color: var(--text-color, #000);
+    background-color: var(--bg-color, #fff);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+}
+
+#clockSelect:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.6);
+}
+#clockSelect:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.6);
+}
+
+#clockSelect::-webkit-scrollbar {
+    width: 12px;
+}
+
+#clockSelect::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#clockSelect::-webkit-scrollbar-thumb {
+    background: #888;
+    /* border-radius: 6px; */
+}
+
+#clockSelect::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* #clockSelect:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+} */
+
+    /* < !--================================================--> */
+
+/* עבור Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* עבור Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.countInput-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.count-input {
+    font-size: 1em;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    color: var(--text-color);
+    background: transparent;
+}
+
+    /* < !--================================================--> */
+
+@media (max-width: 768px) {
+    #time {
+        gap: 1em;
+    }
+
+    #time .circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    #time .circle svg {
+        width: 120px;
+        height: 120px;
+    }
+
+    #time div {
+        font-size: 1.2em;
+    }
+
+    .dots::before {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #time {
+        gap: 0.5em;
+    }
+
+    #time .circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    #time .circle svg {
+        width: 100px;
+        height: 100px;
+    }
+
+    #time div {
+        font-size: 1em;
+    }
+
+    .dots::before {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+
+                /* < !--================================================--> */
+        
+        

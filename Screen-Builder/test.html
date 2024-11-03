@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Builder</title>
+    <style>
+        .row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .element {
+            border: 1px solid black;
+            padding: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container"></div>
+
+    <script>
+        let rows = [];
+
+        function createRow() {
+            let row = document.createElement("div");
+            row.classList.add("row");
+            let container = document.getElementById("container");
+            container.appendChild(row);
+            rows.push(row);
+            addElement(row);
+        }
+
+        function addElement(row) {
+            let elementText = prompt("נא להזין טקסט לאלמנט:");
+            let element = document.createElement("div");
+            element.classList.add("element");
+            element.textContent = elementText;
+            row.appendChild(element);
+            let addButton = document.createElement("button");
+            addButton.textContent = "הוסף אלמנט נוסף";
+            addButton.addEventListener("click", function () {
+                addElement(row);
+            });
+            row.appendChild(addButton);
+        }
+
+        function saveRow(row) {
+            let index = rows.indexOf(row);
+            if (index !== -1) {
+                rows.splice(index, 1);
+                let newRow = document.createElement("div");
+                newRow.classList.add("row");
+                let container = document.getElementById("container");
+                container.appendChild(newRow);
+                rows.push(newRow);
+                addElement(newRow);
+            }
+        }
+
+        let createRowButton = document.createElement("button");
+        createRowButton.textContent = "צור שורה חדשה";
+        createRowButton.addEventListener("click", createRow);
+        document.body.appendChild(createRowButton);
+
+        let saveRowButton = document.createElement("button");
+        saveRowButton.textContent = "שמור שורה נוכחית";
+        saveRowButton.addEventListener("click", function () {
+            if (rows.length > 0) {
+                saveRow(rows[rows.length - 1]);
+            } else {
+                alert("אין שורה לשמירה");
+            }
+        });
+        document.body.appendChild(saveRowButton);
+    </script>
+
+</body>
+
+</html>

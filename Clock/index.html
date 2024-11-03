@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Clock App | Eyal Grady</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+    
+        <!-- <div class="menu-icon"> &#8801; </div> -->
+        <nav class="nav-bar">
+            <a href="#" class="nav-link active" data-target="clockContainer">Clock</a>
+            <a href="#" class="nav-link" data-target="stoperContainer">Stoper</a>
+            <a href="#" class="nav-link" data-target="timerContainer">Timer</a>
+            <a href="#" class="nav-link" data-target="alertContainer">Alert</a>
+        </nav>
+        
+    </header>
+
+    <main>
+
+<!-- /* < !--================================================-->
+
+            
+        <section id="clockContainer" class="content active">
+
+            <div id="time">
+                <div class="circle" style="--clr:#ff2972;">
+                    <div class="dots hr_dot"></div>
+                    <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70" id="hh"></circle>
+                    </svg>
+                    <div id="hours">
+                        00
+                    </div>
+                </div>
+                <div class="circle" style="--clr:#fee800;">
+                    <div class="dots min_dot"></div>
+                    <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70" id="mm"></circle>
+                    </svg>
+                    <div id="minutes">
+                        00
+                    </div>
+                </div>
+                <div class="circle" style="--clr:#04fc43;">
+                    <div class="dots sec_dot"></div>
+                    <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70" id="ss"></circle>
+                    </svg>
+                    <div id="seconds">
+                        00
+                    </div>
+                </div>
+                <div class="ap">
+                    <div id="ampm">AM</div>
+                </div>
+            </div>
+
+            <div class="container-controls">
+                <div class="clock-input">
+                    <select id="clockSelect">
+                        <option value='UTC'>Coordinated Universal Time</option>
+                        <option value='America/New_York'>America/New York (Eastern Time)</option>
+                        <option value='America/Chicago'>America/Chicago (Central Time)</option>
+                        <option value='America/Denver'>America/Denver (Mountain Time)</option>
+                        <option value='America/Los_Angeles'>America/Los Angeles (Pacific Time)</option>
+                        <option value='America/Anchorage'>America/Anchorage (Alaska Time)</option>
+                        <option value='Pacific/Honolulu'>Pacific/Honolulu (Hawaii-Aleutian Time)</option>
+                        <option value='America/Sao_Paulo'>America/Sao Paulo (Brasilia Time)</option>
+                        <option value='America/Buenos_Aires'>America/Buenos Aires (Argentina Time)</option>
+                        <option value='Europe/London'>Europe/London (Greenwich Mean Time)</option>
+                        <option value='Europe/Berlin'>Europe/Berlin (Central European Time)</option>
+                        <option value='Europe/Paris'>Europe/Paris (Central European Time)</option>
+                        <option value='Europe/Moscow'>Europe/Moscow (Moscow Standard Time)</option>
+                        <option value='Africa/Cairo'>Africa/Cairo (Eastern European Time)</option>
+                        <option value='Africa/Johannesburg'>Africa/Johannesburg (South Africa Standard Time)</option>
+                        <option value='Asia/Dubai'>Asia/Dubai (Gulf Standard Time)</option>
+                        <option value='Asia/Karachi'>Asia/Karachi (Pakistan Standard Time)</option>
+                        <option value='Asia/Kolkata'>Asia/Kolkata (India Standard Time)</option>
+                        <option value='Asia/Dhaka'>Asia/Dhaka (Bangladesh Standard Time)</option>
+                        <option value='Asia/Jakarta'>Asia/Jakarta (Western Indonesia Time)</option>
+                        <option value='Asia/Shanghai'>Asia/Shanghai (China Standard Time)</option>
+                        <option value='Asia/Tokyo'>Asia/Tokyo (Japan Standard Time)</option>
+                        <option value='Asia/Seoul'>Asia/Seoul (Korea Standard Time)</option>
+                        <option value='Australia/Perth'>Australia/Perth (Western Australia Time)</option>
+                        <option value='Australia/Adelaide'>Australia/Adelaide (Central Australia Time)</option>
+                        <option value='Australia/Sydney'>Australia/Sydney (Eastern Australia Time)</option>
+                        <option value='Pacific/Auckland'>Pacific/Auckland (New Zealand Standard Time)</option>
+                        <option value='Asia/Jerusalem' selected>Asia/Jerusalem (Israel Standard Time)</option>
+                    </select>
+                </div>
+                
+            </div>
+
+        </section>
+
+        <!-- ================================================ -->
+
+        <section id="stoperContainer" class="content">
+
+            <div id="time">
+                <div class="circle" style="--clr:#ff2972;">
+                    <div class="dots stoperHR_dot"></div>
+                    <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70" id="stoperHH"></circle>
+                    </svg>
+                    <div id="stoperHours">
+                        00
+                        <p id="hourLabel" class="countInput-label">Hours</p>
+                    </div>
+                </div>
+                <div class="circle" style="--clr:#fee800;">
+                    <div class="dots stoperMIN_dot"></div>
+                    <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70" id="stoperMM"></circle>
+                    </svg>
+                    <div id="stoperMinutes">
+                        00
+                        <p id="minLabel" class="countInput-label">Minutes</p>
+                    </div>
+                </div>
+                <div class="circle" style="--clr:#04fc43;">
+                    <div class="dots stoperSEC_dot"></div>
+                    <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70" id="stoperSS"></circle>
+                    </svg>
+                    <div id="stoperSeconds">
+                        00
+                        <p id="secLabel" class="countInput-label">Seconds</p>
+                    </div>
+                </div>
+                <div class="ap">
+                    <div id="stoperMilliseconds">
+                        000
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container-controls">
+
+                <div class="controls">
+
+                    <button class="btns" id="stoperStartBtn">
+                        start
+                    </button>
+                    <button class="btns" id="stoperPauseBtn">
+                        pause
+                    </button>
+                    <button class="btns" id="stoperContinueBtn">
+                        continue
+                    </button>
+                    <button class="btns" id="stoperResetBtn">
+                        reset
+                    </button>
+
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- ================================================ -->
+
+        <section id="timerContainer" class="content">
+
+            <div id="time">
+                <div class="circle" style="--clr:#ff2972;">
+                    <!-- <div class="dots timerHR_dot"></div> -->
+                    <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70" id="timerHH"></circle>
+                    </svg>
+                                
+                    <div class="countInput-wrapper">
+                        <input type="number" id="timerHours" class="count-input" max="99" min="0" value="00">
+                        <p id="hourLabel" class="countInput-label">Hours</p>
+                    </div>
+                </div>
+                <div class="circle" style="--clr:#fee800;">
+                    <!-- <div class="dots timerMIN_dot"></div> -->
+                    <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70" id="timerMM"></circle>
+                    </svg>
+                    <div class="countInput-wrapper">
+                        <input type="number" id="timerMinutes" class="count-input" max="60" min="0" value="00">
+                        <p id="minLabel" class="countInput-label">Minutes</p>
+                    </div>
+                </div>
+                <div class="circle" style="--clr:#04fc43;">
+                    <!-- <div class="dots timerSEC_dot"></div> -->
+                    <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                        <circle cx="70" cy="70" r="70" id="timerSS"></circle>
+                    </svg>
+                    <div class="countInput-wrapper">
+                        <input type="number" id="timerSecondes" class="count-input" max="60" min="0" value="00">
+                        <p id="secLabel" class="countInput-label">Seconds</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-controls">
+
+                <div class="controls">
+                
+                    <button class="btns" id="timerStartBtn">
+                        start
+                    </button>
+                    <button class="btns" id="timerPauseBtn">
+                        pause
+                    </button>
+                    <button class="btns" id="timerContinueBtn">
+                        continue
+                    </button>
+                    <button class="btns" id="timerResetBtn">
+                        reset
+                    </button>
+
+                </div>
+                
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+    
+    
+</body>
+</html>
