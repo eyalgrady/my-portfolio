@@ -109,23 +109,26 @@ span {
   box-shadow: 0 0 1rem var(--main-color);
 }
 
-#lightBtn a {
-  padding: 1rem 2.8rem;
+#lightBtn {
+  display: flex;
+  gap: 10px;
+  width: 100%;
   margin-top: 2rem;
-  border-radius: 1.2rem;
-    font-size: 1.6rem;
-      letter-spacing: .1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: .5s ease;
-      text-decoration: none;
-      display: inline-block;
+}
 
+#lightBtn a {
+  flex: 1;
+  text-align: center;
+  padding: 1rem 2.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .5s ease;
+  text-decoration: none;
   background: var(--main-color);
   border: .2rem solid var(--main-color);
-  font-size: 1.6rem;
+  border-radius: 1.2rem;
   color: var(--second-bg-color);
-  transition: .5s ease;
 }
 
 #lightBtn a:hover {
@@ -342,7 +345,28 @@ margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  .skills-icon {
+      background-color: white;
+      padding: 10px;
+      border-radius: 8px;
+      display: inline-block;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  
+    .skills-icon i {
+      font-size: 24px;
+      color: #333;
+    }
+  
+    .skills-icon p {
+      font-size: 14px;
+      color: #333;
+      margin-top: 5px;
+    }
 }
+
 /* < !--=======================Projects=====================--> */
 
 .portfolio {
@@ -574,7 +598,7 @@ box-shadow: 0 0 1rem var(--second-bg-color);
   font-size: 2.4rem;
   color: var(--main-color);
 }
-/* < !--======================Carsds======================--> */
+/* < !--======================Cards======================--> */
 
 
 .card-wrapper {
@@ -612,8 +636,13 @@ box-shadow: 0 0 1rem var(--second-bg-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   padding: 2rem 5% 2rem;
+}
+
+.intro-title {
+  color: var(--main-color);
+  margin-bottom: 5px;
 }
 
 @keyframes drop {
