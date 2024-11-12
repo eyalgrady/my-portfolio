@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9e9c1ee0.css",
+    "main.js": "/static/js/main.37ad68b6.js",
+    "static/js/453.d855a71b.chunk.js": "/static/js/453.d855a71b.chunk.js",
+    "static/media/toys.jpg": "/static/media/toys.2f5cc63b7e4512dd2789.jpg",
+    "static/media/books.jpg": "/static/media/books.805821d23a3f63566f17.jpg",
+    "static/media/free-shipping.jpg": "/static/media/free-shipping.7c805cbd4508a7d535ef.jpg",
+    "static/media/kitchen.jpg": "/static/media/kitchen.af535717a7579eabdac4.jpg",
+    "static/media/beauty.jpg": "/static/media/beauty.225aaef918f59e5de14a.jpg",
+    "static/media/amasonBusiness_black.png": "/static/media/amasonBusiness_black.aff427b147071e4f717d.png",
+    "index.html": "/index.html",
+    "main.9e9c1ee0.css.map": "/static/css/main.9e9c1ee0.css.map",
+    "main.37ad68b6.js.map": "/static/js/main.37ad68b6.js.map",
+    "453.d855a71b.chunk.js.map": "/static/js/453.d855a71b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9e9c1ee0.css",
+    "static/js/main.37ad68b6.js"
+  ]
+}
